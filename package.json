@@ -1,0 +1,15 @@
+{
+  "name": "typography",
+  "version": "1.0.0",
+  "description": "Landing page for learning typography",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  },
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css"
+  },
+  "author": "Lulu Wang",
+  "license": "ISC"
+}

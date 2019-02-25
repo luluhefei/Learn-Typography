@@ -1,0 +1,42 @@
+.section-about {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0;
+    margin-top: -20vh;
+
+}
+
+.section-features {
+    display: block;
+    background-color: $color-grey-light-1;
+    padding: 20rem 0;
+    height: 80vh;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.6),
+        rgba($color-primary-dark, 0.6)),
+        url(../img/feature.jpg);
+    background-size: cover;
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+
+    & > * {
+        transform: skewY(7deg);
+    }
+}
+
+.section-courses {
+    display: block;
+    background-color: $color-grey-light-1;
+    padding: 20rem 0 50rem 0;
+    margin-top: -5rem;
+    height: 80vh;
+}
+
+.section-stories {
+    display: block;
+    background-color: $color-grey-light-1;
+    padding: 15rem 0;
+    height: 80vh;
+    text-align: center;
+    font-size: $default-font-size;
+}
