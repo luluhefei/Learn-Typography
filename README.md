@@ -1,1 +1,1 @@
-This is a personal css practice project, based on Margret Shepherd's book "Learn Typography".
+This is a personal css practice project, based on Margret Shepherd's book "Learn Calligraphy".
