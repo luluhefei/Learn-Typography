@@ -86,8 +86,10 @@ body {
 }
 
 .btn-text {
+    &,
     &:link,
     &:visited {
+        border: none;
         font-size: $default-font-size;
         color: $color-primary-light;
         display: inline-block;
@@ -95,6 +97,7 @@ body {
         border-bottom: 1px solid $color-primary-light;
         padding: 1rem 3rem 1rem;
         transition: all .2s;
+        background-color: transparent;
     }
 
     &:hover {

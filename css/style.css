@@ -92,14 +92,16 @@ body {
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
 
-.btn-text:link, .btn-text:visited {
+.btn-text, .btn-text:link, .btn-text:visited {
+  border: none;
   font-size: 1.6rem;
   color: rgba(147, 0, 119, 0.8);
   display: inline-block;
   text-decoration: none;
   border-bottom: 1px solid rgba(147, 0, 119, 0.8);
   padding: 1rem 3rem 1rem;
-  transition: all .2s; }
+  transition: all .2s;
+  background-color: transparent; }
 
 .btn-text:hover {
   background-color: rgba(147, 0, 119, 0.8);
@@ -117,31 +119,37 @@ body {
 .u-margin-bottom-2 {
   margin-bottom: 2rem; }
 
+.u-margin-bottom-4 {
+  margin-bottom: 4rem; }
+
 .u-margin-bottom-6 {
   margin-bottom: 6rem; }
 
 .u-left-align {
   text-align: left; }
 
-.bnt:link, .bnt:visited {
+.bnt, .bnt:link, .bnt:visited {
   text-transform: uppercase;
   text-decoration: none;
   margin-top: 2rem;
   padding: 1.5rem 4rem;
   display: inline-block;
   transition: all .2s;
-  position: relative; }
+  position: relative;
+  border: none;
+  cursor: pointer; }
 
 .bnt:hover {
   transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(58, 0, 136, 0.3); }
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3); }
   .bnt:hover::after {
     transform: scaleX(1.5) scaleY(1.6);
     opacity: 0; }
 
-.bnt:active {
+.bnt:active, .bnt:focus {
+  outline: none;
   transform: translateY(0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(58, 0, 136, 0.3); }
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3); }
 
 .bnt--white {
   background-color: #fff;
@@ -150,6 +158,15 @@ body {
   margin-top: 2rem; }
   .bnt--white::after {
     background-color: #fff; }
+
+.bnt--purple {
+  background-color: rgba(147, 0, 119, 0.8);
+  color: #fff;
+  border-radius: 5rem;
+  margin-top: 2rem;
+  font-size: 1.6rem; }
+  .bnt--purple::after {
+    background-color: rgba(147, 0, 119, 0.8); }
 
 .bnt::after {
   content: "";
@@ -313,7 +330,7 @@ body {
   width: 85%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 3px;
   padding: 6rem;
   padding-left: 8rem;
@@ -365,11 +382,78 @@ body {
   height: 100%;
   width: 100%;
   z-index: -1;
-  opacity: .35; }
+  opacity: .5; }
   .bg-video__content {
     height: 100%;
     width: 100%;
     object-fit: cover; }
+
+.form {
+  position: relative; }
+  .form__group:not(:last-child) {
+    margin-bottom: 1rem; }
+  .form__input {
+    font-family: inherit;
+    color: inherit;
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: white;
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 80%;
+    transition: all .3s; }
+    .form__input:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+      border-bottom: 3px solid rgba(147, 0, 119, 0.8); }
+    .form__input:focus:invalid {
+      border-bottom: 3px solid rgba(230, 28, 93, 0.8); }
+    .form__input::-webkit-input-placeholder {
+      color: #999; }
+  .form__lable {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all .3s; }
+  .form__input:placeholder-shown + .form__lable {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem); }
+  .form__radio-group {
+    width: 48%;
+    display: inline-block; }
+  .form__radio-input {
+    display: none; }
+  .form__radio-btn {
+    border: 5px solid rgba(58, 0, 136, 0.8);
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    display: inline-block;
+    position: absolute;
+    margin-left: -5rem; }
+    .form__radio-btn::after {
+      content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(58, 0, 136, 0.8);
+      opacity: 0;
+      transition: opacity, .2s; }
+  .form__radio-input:checked ~ .form__radio-label .form__radio-btn::after {
+    opacity: 1; }
+  .form__radio-label {
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding-left: 5rem; }
 
 .header {
   height: 95vh;
@@ -451,7 +535,7 @@ body {
 
 .section-book {
   padding: 5rem 0;
-  margin-top: 2rem;
+  margin-top: 2.2rem;
   background-image: linear-gradient(to right bottom, rgba(147, 0, 119, 0.8), rgba(58, 0, 136, 0.8)); }
 
 .book {

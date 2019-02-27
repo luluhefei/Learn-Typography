@@ -5,13 +5,11 @@
     height: 100%;
     width: 100%;
     z-index: -1;
-    opacity: .35;  
+    opacity: .5;  
 
     &__content {
         height: 100%;
         width: 100%;
         object-fit: cover;
-
-
     }
 }
